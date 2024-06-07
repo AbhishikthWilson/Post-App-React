@@ -3,14 +3,20 @@ import './App.css';
 import AddPost from './components/AddPost';
 import SearchPost from './components/SearchPost';
 import DeletePost from './components/DeletePost';
+import NavBar from './components/NavBar';
+import ViewPost from './components/ViewPost';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div >
-      <AddPost/>
-      <SearchPost/>
-      <DeletePost/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AddPost/>}/>
+      <Route path='/search' element={<SearchPost/>}/>
+      <Route path='/delete' element={<DeletePost/>}/>
+      <Route path='/view' element={<ViewPost/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
